@@ -1,2 +1,2 @@
 # KyClashRules
-Subconverter config for KyCloud
+[Subconverter](https://github.com/tindy2013/subconverter) configs for KyCloud.
