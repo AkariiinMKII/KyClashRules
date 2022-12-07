@@ -1,4 +1,4 @@
-# 关于 [KyCloudProviders.yml](https://github.com/AkariiinMKII/SubConfig/blob/master/KyCloud/KyCloudProviders.yml)
+# 关于 [KyCloudProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml)
 
 - 此文件为适用于 KyCloud 的在线 providers 托管，可根据需求自行 fork 并修改
 - 推荐使用 [fastgit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 https://raw.fastgit.org/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml
