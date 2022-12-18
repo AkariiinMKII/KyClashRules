@@ -2,7 +2,7 @@ proxy-providers:
   ky_account_info:
     type: http
     path: ./proxy-providers/ky_account_info.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/osubscribe.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&fdn=false&include=流量|时间&rename=%E2%9B%BD%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%3A%28%5Cd%2B%29G@%E2%9B%BD%20%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%20%241G`%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4%3A%28%5Cd%2B%29-%28%5Cd%2B%29-%28%5Cd%2B%29@%F0%9F%93%85%20%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4%20%241.%242.%243
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/osubscribe.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=流量|时间&emoji=false&fdn=false&new_name=true&rename=%E2%9B%BD%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%3A%28%5Cd%2B%29G@%E2%9B%BD%20%E5%89%A9%E4%BD%99%E6%B5%81%E9%87%8F%20%241G`%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4%3A%28%5Cd%2B%29-%28%5Cd%2B%29-%28%5Cd%2B%29@%F0%9F%93%85%20%E5%88%B0%E6%9C%9F%E6%97%B6%E9%97%B4%20%241.%242.%243
     interval: 1800
   ky_hk_ss:
     type: http
