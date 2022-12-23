@@ -19,8 +19,8 @@ parsers: # array
         raw = raw.replace(/\%SUB_ADDRESS\%/gm,`${subaddr}`)
         raw = raw.replace(/\%SUB_ID\%/gm,`${subid}`)
         raw = raw.replace(/\%SUB_TOKEN\%/gm,`${subtoken}`)
-        //const setdns = await axios.get('https://raw.fastgit.org/AkariiinMKII/SubConfig/master/KyCloud/dns.yml') // 如需预置dns字段请删除句首注释符
-        //raw = `${setdns.data}${raw}` // 如需预置dns字段请删除句首注释符
+        //const setdns = await axios.get('https://raw.fastgit.org/AkariiinMKII/SubConfig/master/KyCloud/dns.yml') // 如需预置 dns 字段请删除句首注释符
+        //raw = `${setdns.data}${raw}` // 如需预置 dns 字段请删除句首注释符
         let { headers:{"subscription-userinfo": subinfo = ""}={}, status } = await axios.head(suburl)
         subinfo = subinfo.replace(/;*$/g,'')
         if (status === 200 && subinfo) {
