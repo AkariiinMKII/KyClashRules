@@ -32,4 +32,4 @@ parsers: # array
 
 - 可以使用 parser 对本配置文件进行多次编辑（如追加规则条目），但需要保证以上脚本最后执行，即放置在 parser 队列末尾
 - 不推荐使用脚本预置`dns`字段，如有需要可使用 [Mixin](https://docs.cfw.lbyczf.com/contents/mixin.html) 功能追加
-- 不同区 DNS 服务状态也不同，请根据实际情况调整，尤其是`doh`地址
+- 不同区 DNS 服务状态也不同，请根据实际情况调整，尤其是 doh 地址
