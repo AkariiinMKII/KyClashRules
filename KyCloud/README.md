@@ -10,8 +10,8 @@ parsers: # array
   - reg: '\/SubConfig\/master\/KyCloud\/KyCloudProviders.yml'
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
-        const subcon = 'xxxxxx' //引号中改为 subconverter 后端地址
-        const suburl = 'xxxxxx' //引号中改为 KyCloud 的 Clash 个人订阅地址
+        const subcon = 'xxxxxx' //引号中的xxxxxx改为 subconverter 后端地址
+        const suburl = 'xxxxxx' //引号中的xxxxxx改为 KyCloud 的 Clash 个人订阅地址
         const subaddr = suburl.match(/\/\/(.*?)\//)[1]
         const subid = suburl.match(/sid=(.*?)&/)[1]
         const subtoken = suburl.match(/token=(.*)/)[1]
@@ -31,5 +31,21 @@ parsers: # array
 ```
 
 - 可以使用 parser 对本配置文件进行多次编辑（如追加规则条目），但需要保证以上脚本最后执行，即放置在 parser 队列末尾
-- 不推荐使用脚本预置`dns`字段，如有需要可使用 [Mixin](https://docs.cfw.lbyczf.com/contents/mixin.html) 功能追加
-- 不同区 DNS 服务状态也不同，请根据实际情况调整，尤其是 doh 地址
+- 不推荐使用脚本预置`dns`字段，如有需要可使用 [Mixin](https://docs.cfw.lbyczf.com/contents/mixin.html) 功能添加
+- 如果打开了 Clash for Windows 的 [TUN Mode](https://docs.cfw.lbyczf.com/contents/tun.html) 开关，预置在配置文件中的`dns`字段会被覆盖，必须通过 Mixin 功能添加才能使字段生效
+- 使用 [diff](https://docs.cfw.lbyczf.com/contents/diff.html) 或者 parser 也可以在原始订阅中预置`dns`字段，但不推荐，理由同上。预置用脚本如下
+
+```yaml
+parsers: # array
+  - url: xxxxxx # xxxxxx改为 KyCloud 的 Clash 个人订阅地址
+    code: |
+      module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
+        const setdns = await axios.get('https://raw.fastgit.org/AkariiinMKII/SubConfig/master/KyCloud/dns.yml')
+        if (setdns.status === 200 && setdns.data) {
+          return `${setdns.data}\n${raw}`
+        }
+        return raw
+      }
+```
+
+- 不同区 DNS 服务状态也不同，尤其是 doh 地址，请根据实际情况调整
