@@ -216,22 +216,27 @@ proxy-groups:
       - 🇰🇷 韩国节点
       - 🇸🇬 新加坡节点
       - 🇺🇸 美国节点
+      - 🚀 其他节点
       - ⏳ 延迟优先
       - DIRECT
-    use:
-      - ky_hk_ss
-      - ky_tw_ss
-      - ky_jp_ss
-      - ky_sg_ss
-      - ky_us_ss
-      - ky_others_ss
-      - ky_hk_v2
-      - ky_tw_v2
-      - ky_jp_v2
-      - ky_kr_v2
-      - ky_sg_v2
-      - ky_us_v2
-      - ky_others_v2
+  - name: 📺 DisneyPlus
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 📡 SS线路优先
+      - 🍰 SS手动选择
+      - 🍰 V2手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🚀 其他节点
+      - ⏳ 延迟优先
+      - DIRECT
   - name: 📺 AbemaTV
     type: select
     proxies:
@@ -842,6 +847,12 @@ rule-providers:
     path: ./rule-providers/acl4ssr_netflix.yaml
     url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
     interval: 43200
+  acl4ssr_disneyplus:
+    type: http
+    behavior: classical
+    path: ./rule-providers/acl4ssr_disneyplus.yaml
+    url: https://raw.fastgit.org/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml
+    interval: 43200
   acl4ssr_abematv:
     type: http
     behavior: classical
@@ -980,6 +991,7 @@ rules:
   - RULE-SET,acl4ssr_telegram,💬 Telegram
   - RULE-SET,acl4ssr_youtube,📺 YouTube
   - RULE-SET,acl4ssr_netflix,📺 Netflix
+  - RULE-SET,acl4ssr_disneyplus,📺 DisneyPlus
   - RULE-SET,acl4ssr_abematv,📺 AbemaTV
   - RULE-SET,acl4ssr_amazon,📺 Amazon
   - RULE-SET,acl4ssr_bahamut,📺 巴哈姆特
