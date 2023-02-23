@@ -124,7 +124,7 @@ proxy-providers:
   ky_overseas_v2:
     type: http
     path: ./proxy-providers/ky_overseas_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=海外用户&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=海外用户&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DC%20
     interval: 43200
     health-check:
       enable: true
