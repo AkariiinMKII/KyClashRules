@@ -42,6 +42,10 @@ dns:
   fallback:
     - https://162.159.36.1/dns-query
     - https://1.0.0.1/dns-query
+  nameserver-policy:
+      '+.raw.fastgit.org': '8.8.8.8'
+      '+.fgit.gq': '8.8.8.8'
+      '+.fgit.ml': '8.8.8.8'
   fallback-filter:
     geoip: true
     geoip-code: CN
