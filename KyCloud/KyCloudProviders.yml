@@ -7,7 +7,7 @@ proxy-providers:
   ky_hk_ss:
     type: http
     path: ./proxy-providers/ky_hk_ss.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*香港&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*香港&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -16,7 +16,7 @@ proxy-providers:
   ky_hk_v2:
     type: http
     path: ./proxy-providers/ky_hk_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*香港&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*香港&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -25,7 +25,7 @@ proxy-providers:
   ky_tw_ss:
     type: http
     path: ./proxy-providers/ky_tw_ss.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*台湾&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*台湾&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -34,7 +34,7 @@ proxy-providers:
   ky_tw_v2:
     type: http
     path: ./proxy-providers/ky_tw_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*台湾&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*台湾&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -43,7 +43,7 @@ proxy-providers:
   ky_jp_ss:
     type: http
     path: ./proxy-providers/ky_jp_ss.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*日本&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*日本&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -52,7 +52,7 @@ proxy-providers:
   ky_jp_v2:
     type: http
     path: ./proxy-providers/ky_jp_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*日本&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*日本&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -61,7 +61,7 @@ proxy-providers:
   ky_kr_v2:
     type: http
     path: ./proxy-providers/ky_kr_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*韩国&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*韩国&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -70,7 +70,7 @@ proxy-providers:
   ky_sg_ss:
     type: http
     path: ./proxy-providers/ky_sg_ss.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*新加坡&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*新加坡&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -79,7 +79,7 @@ proxy-providers:
   ky_sg_v2:
     type: http
     path: ./proxy-providers/ky_sg_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*新加坡&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*新加坡&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -88,7 +88,7 @@ proxy-providers:
   ky_us_ss:
     type: http
     path: ./proxy-providers/ky_us_ss.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*美国&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL.*美国&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -97,7 +97,7 @@ proxy-providers:
   ky_us_v2:
     type: http
     path: ./proxy-providers/ky_us_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*美国&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL.*美国&exclude=SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -106,7 +106,7 @@ proxy-providers:
   ky_others_ss:
     type: http
     path: ./proxy-providers/ky_others_ss.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL&exclude=海外用户|回国线路|香港|台湾|日本|韩国|新加坡|美国&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=SS.*IEPL&exclude=海外用户|回国线路|香港|台湾|日本|韩国|新加坡|美国&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
@@ -115,7 +115,7 @@ proxy-providers:
   ky_others_v2:
     type: http
     path: ./proxy-providers/ky_others_v2.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL&exclude=海外用户|回国线路|香港|台湾|日本|韩国|新加坡|美国|SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=IEPL&exclude=海外用户|回国线路|香港|台湾|日本|韩国|新加坡|美国|SS&emoji=false&fdn=true&new_name=true&rename=%5E（SS）IEPL%5C-@SS%20`%5EIEPL%5C-@V2%20`【仅海外用户】@DL%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
