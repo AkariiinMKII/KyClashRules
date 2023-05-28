@@ -10,8 +10,8 @@ parsers: # array
   - reg: '\/SubConfig\/master\/KyCloud\/KyCloudProviders'
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
-        const subcon = 'xxxxxx' //引号中的xxxxxx改为 subconverter 后端地址
-        const suburl = 'xxxxxx' //引号中的xxxxxx改为 KyCloud 的 Clash 个人订阅地址
+        const subcon = 'xxxxxx' // 引号中的 xxxxxx 改为 subconverter 后端服务域名，例如 api.subconverter.com ，不需要包含 http:// 或 https:// ，如使用非默认端口需添加端口号
+        const suburl = 'xxxxxx' // 引号中的 xxxxxx 改为 KyCloud 的完整 Clash 个人订阅地址，需要包含 https://
         const subaddr = suburl.match(/\/\/(.*?)\//)[1]
         const subid = suburl.match(/sid=(.*?)&/)[1]
         const subtoken = suburl.match(/token=(.*)/)[1]
@@ -19,8 +19,8 @@ parsers: # array
         raw = raw.replace(/\%SUB_ADDRESS\%/gm,`${subaddr}`)
         raw = raw.replace(/\%SUB_ID\%/gm,`${subid}`)
         raw = raw.replace(/\%SUB_TOKEN\%/gm,`${subtoken}`)
-        //const setdns = await axios.get('https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/dns.yml') // 如需预置 dns 字段请删除句首注释符
-        //raw = `${setdns.data}${raw}` // 如需预置 dns 字段请删除句首注释符
+        //const setdns = await axios.get('https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/dns.yml') // 如需预置 dns 字段，请删除句首注释符
+        //raw = `${setdns.data}${raw}` // 如需预置 dns 字段，请删除句首注释符
         let { headers:{"subscription-userinfo": subinfo = ""}={}, status } = await axios.head(suburl)
         subinfo = subinfo.replace(/;*$/g,'')
         if (status === 200 && subinfo) {
