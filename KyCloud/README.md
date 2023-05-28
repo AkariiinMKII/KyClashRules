@@ -7,7 +7,7 @@
 
 ```yaml
 parsers: # array
-  - reg: '\/SubConfig\/master\/KyCloud\/KyCloudProviders.yml'
+  - reg: '\/SubConfig\/master\/KyCloud\/KyCloudProviders'
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
         const subcon = 'xxxxxx' //引号中的xxxxxx改为 subconverter 后端地址
@@ -54,4 +54,4 @@ parsers: # array
 
 - 此文件为使用 [filter](https://github.com/Dreamacro/clash/pull/2518) 功能对 KyCloudProviders.yml 进行简化的版本
 - 需要 [Clash for Windows v0.20.21 (Clash Premium 2023.04.13)](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.21) 及以上版本
-- 使用方法同上
+- 使用方法同上，只需将订阅地址改为`https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithFilter.yml`
