@@ -1,7 +1,7 @@
 # 关于 [KyCloudProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml)
 
 - 此文件为适用于 KyCloud 的 provider 类型配置文件模板，可根据需求自行 fork 并修改
-- 推荐使用 [fastgit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml
+- 推荐使用 [fastgit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 `https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml`
 - 需要配合 [subconverter](https://github.com/tindy2013/subconverter) 使用，可以选择自建服务后端、公共服务后端或 KyCloud 提供的订阅转换服务后端
 - 需要配合 [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg) 的 [parser](https://docs.cfw.lbyczf.com/contents/parser.html#%E8%BF%9B%E9%98%B6%E6%96%B9%E6%B3%95-javascript) 功能使用，脚本如下
 
@@ -49,3 +49,9 @@ parsers: # array
 ```
 
 - 不同区 DNS 服务状态也不同，尤其是 doh 地址，请根据实际情况调整
+
+## 关于 [KyCloudProviderswithFilter.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithFilter.yml)
+
+- 此文件为使用 [filter](https://github.com/Dreamacro/clash/pull/2518) 功能对 KyCloudProviders.yml 进行简化的版本
+- 需要 [Clash for Windows v0.20.21 (Clash Premium 2023.04.13)](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.21) 及以上版本
+- 使用方法同上
