@@ -631,7 +631,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: SS 美国"
+    filter: "SS 美国"
     use:
       - ky_nodes
   - name: 🇺🇸 美国 V2
