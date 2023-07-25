@@ -1,7 +1,7 @@
 # 关于 [KyCloudProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml)
 
 - 此文件为适用于 KyCloud 的 provider 类型配置文件模板，可根据需求自行 fork 并修改
-- 推荐使用 [fastgit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 `https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml`
+- 推荐使用 [fastgit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 `https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviders.yml`
 - 需要配合 [subconverter](https://github.com/tindy2013/subconverter) 使用，可以选择自建服务后端、公共服务后端或 KyCloud 提供的订阅转换服务后端
 - 需要配合 [Clash for Windows](https://github.com/Fndroid/clash_for_windows_pkg) 的 [parser](https://docs.cfw.lbyczf.com/contents/parser.html#%E8%BF%9B%E9%98%B6%E6%96%B9%E6%B3%95-javascript) 功能使用，脚本如下
 
@@ -19,7 +19,7 @@ parsers: # array
         raw = raw.replace(/\%SUB_ADDRESS\%/gm,`${subaddr}`)
         raw = raw.replace(/\%SUB_ID\%/gm,`${subid}`)
         raw = raw.replace(/\%SUB_TOKEN\%/gm,`${subtoken}`)
-        //const setdns = await axios.get('https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/dns.yml') // 如需预置 dns 字段，请删除句首注释符
+        //const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/dns.yml') // 如需预置 dns 字段，请删除句首注释符
         //raw = `${setdns.data}${raw}` // 如需预置 dns 字段，请删除句首注释符
         let { headers:{"subscription-userinfo": subinfo = ""}={}, status } = await axios.head(suburl)
         subinfo = subinfo.replace(/;*$/g,'')
@@ -40,7 +40,7 @@ parsers: # array
   - url: xxxxxx # xxxxxx改为 KyCloud 的 Clash 个人订阅地址
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
-        const setdns = await axios.get('https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/dns.yml')
+        const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/dns.yml')
         if (setdns.status === 200 && setdns.data) {
           return `${setdns.data}\n${raw}`
         }
@@ -54,4 +54,4 @@ parsers: # array
 
 - 此文件为使用 [filter](https://github.com/Dreamacro/clash/pull/2518) 功能对 KyCloudProviders.yml 进行简化的版本
 - 需要 [Clash for Windows v0.20.21 (Clash Premium 2023.04.13)](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.21) 及以上版本
-- 使用方法同上，只需将订阅地址改为`https://raw.fgit.ml/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithFilter.yml`
+- 使用方法同上，只需将订阅地址改为`https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithFilter.yml`
