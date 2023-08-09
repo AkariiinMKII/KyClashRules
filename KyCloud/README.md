@@ -65,15 +65,3 @@ parsers: # array
 ```
 
 - 不同区 DNS 服务状态也不同，尤其是 doh 地址，请根据实际情况调整
-
-### 手动配置
-
-使用 Clash for Windows 以外的客户端时，也可以按以下步骤手动编辑配置文件
-
-- 下载文件，并修改文件内容
-  - %SUBCON_BACKEND% ：subconverter 后端服务的 **域名** ，例如 api.subconverter.com ，不需要包含 http:// 或 https:// ，如使用非默认端口需添加端口号
-  - %SUB_ADDRESS% ：Clash 个人订阅地址中的 **域名** ，不需要包含 http:// 或 https://
-  - %SUB_ID% ：Clash 个人订阅地址中的 sid 值，通常为 `sid=` 和 `&` 之间的字符串
-  - %SUB_TOKEN% ：Clash 个人订阅地址中的 token 值，通常为 `token=` 到结尾的字符串
-
-- 导入到客户端并应用

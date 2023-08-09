@@ -46,24 +46,6 @@ proxy-groups:
       - 🇺🇸 美国 SS
       - 🚀 其他 SS
       - DIRECT
-  - name: 💬 Telegram
-    type: select
-    proxies:
-      - 💡 默认节点
-      - 🌈 UDP节点
-      - ☕ 自动回落
-      - 📡 SS线路优先
-      - 🍰 SS手动选择
-      - 🍰 V2手动选择
-      - 🇭🇰 香港节点
-      - 🇹🇼 台湾节点
-      - 🇯🇵 日本节点
-      - 🇰🇷 韩国节点
-      - 🇸🇬 新加坡节点
-      - 🇺🇸 美国节点
-      - 🚀 其他节点
-      - ⏳ 延迟优先
-      - DIRECT
   - name: 📺 YouTube
     type: select
     proxies:
@@ -183,6 +165,42 @@ proxy-groups:
     use:
       - ky_nodes
   - name: 🎵 Spotify
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 📡 SS线路优先
+      - 🍰 SS手动选择
+      - 🍰 V2手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🚀 其他节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 💬 Telegram
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 📡 SS线路优先
+      - 🍰 SS手动选择
+      - 🍰 V2手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - 🚀 其他节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🤖 OpenAI
     type: select
     proxies:
       - 💡 默认节点
@@ -744,6 +762,11 @@ rule-providers:
     behavior: classical
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
     interval: 43200
+  acl4ssr_openai:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml
+    interval: 43200
   acl4ssr_psn:
     type: http
     behavior: classical
@@ -827,6 +850,7 @@ rules:
   - RULE-SET,acl4ssr_easylist,⛔ 广告拦截
   - RULE-SET,acl4ssr_easylistcn,⛔ 广告拦截
   - RULE-SET,acl4ssr_telegram,💬 Telegram
+  - RULE-SET,acl4ssr_openai,🤖 OpenAI
   - RULE-SET,acl4ssr_youtube,📺 YouTube
   - RULE-SET,acl4ssr_netflix,📺 Netflix
   - RULE-SET,acl4ssr_disneyplus,📺 DisneyPlus
