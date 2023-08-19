@@ -11,8 +11,8 @@
 
 ### 关于 [KyCloudProviderswithFilter.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithFilter.yml)
 
-- 此文件为使用 [filter](https://github.com/Dreamacro/clash/pull/2518) 功能对 KyCloudProviders.yml 进行简化的版本
-- 需要 [Clash for Windows v0.20.21 (Clash Premium 2023.04.13)](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.21) 及以上版本
+- 此文件为 KyCloudProviders.yml 的简化版本，使用了 [v1.15.0](https://github.com/Dreamacro/clash/releases/tag/v1.15.0) (Clash Premium 2023.04.13) 加入的 [filter](https://github.com/Dreamacro/clash/pull/2518) 和 [v1.17.0](https://github.com/Dreamacro/clash/releases/tag/v1.17.0) (Clash Premium 2023.06.30) 加入的 [regexp2](https://github.com/Dreamacro/clash/pull/2802)
+- 需要 [Clash for Windows v0.20.28](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.28) 及以上版本
 - 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithFilter.yml`
 
 ## 使用
