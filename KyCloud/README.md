@@ -15,6 +15,11 @@
 - 需要 [Clash for Windows v0.20.28](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.28) 及以上版本
 - 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithFilter.yml`
 
+### 关于 [KyCloudProviderswithBackupNodes.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithBackupNodes.yml)
+
+- 此文件为基于 KyCloudProviderswithFilter.yml 添加备用订阅的版本，以应对机场临时瘫痪，Clash 版本要求同上
+- 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/KyCloudProviderswithBackupNodes.yml` 并修改 parser 脚本中的对应内容
+
 ## 使用
 
 ### 使用 Clash for Windows 进行自动配置（推荐）
@@ -26,8 +31,21 @@ parsers: # array
   - reg: '\/SubConfig\/master\/KyCloud\/KyCloudProviders'
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
+
+        // 请填写 KyCloud 订阅信息
         const subcon = 'xxxxxx' // 引号中的 xxxxxx 改为 subconverter 后端服务域名，例如 api.subconverter.com ，不需要包含 http:// 或 https:// ，如使用非默认端口需添加端口号
         const suburl = 'xxxxxx' // 引号中的 xxxxxx 改为 KyCloud 的完整 Clash 个人订阅地址，需要包含 https://
+
+        // 如用于包含备用节点的配置文件模板,请删除以下三行句首的注释符，并根据要求填写信息
+        //const backupsub = 'xxxxxx' // 引号中的 xxxxxx 改为备用订阅地址，格式同 KyCloud 个人订阅
+        //const backupsubencode = encodeURIComponent(backupsub)
+        //raw = raw.replace(/\%BACKUP_SUB\%/gm,`${backupsubencode}`)
+
+        // 如需预置 dns 字段,请删除以下两行句首的注释符
+        //const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/dns.yml')
+        //raw = `${setdns.data}${raw}`
+
+        // 开始处理配置文件
         const subaddr = suburl.match(/\/\/(.*?)\//)[1]
         const subid = suburl.match(/sid=(.*?)&/)[1]
         const subtoken = suburl.match(/token=(.*)/)[1]
@@ -35,8 +53,6 @@ parsers: # array
         raw = raw.replace(/\%SUB_ADDRESS\%/gm,`${subaddr}`)
         raw = raw.replace(/\%SUB_ID\%/gm,`${subid}`)
         raw = raw.replace(/\%SUB_TOKEN\%/gm,`${subtoken}`)
-        //const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/master/KyCloud/dns.yml') // 如需预置 dns 字段，请删除句首注释符
-        //raw = `${setdns.data}${raw}` // 如需预置 dns 字段，请删除句首注释符
         let { headers:{"subscription-userinfo": subinfo = ""}={}, status } = await axios.head(suburl)
         subinfo = subinfo.replace(/;*$/g,'')
         if (status === 200 && subinfo) {
