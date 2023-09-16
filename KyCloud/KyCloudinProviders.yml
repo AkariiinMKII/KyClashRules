@@ -11,14 +11,6 @@ proxy-providers:
       enable: true
       url: http://clients.l.google.com/generate_204
       interval: 300
-  backup_nodes:
-    type: http
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=%BACKUP_SUB%&emoji=false&fdn=true&new_name=true&sort=true
-    interval: 43200
-    health-check:
-      enable: true
-      url: http://clients.l.google.com/generate_204
-      interval: 300
 proxy-groups:
   - name: 🔰 用户信息
     type: select
@@ -41,7 +33,6 @@ proxy-groups:
       - 🚀 其他节点
       - ⏳ 延迟优先
       - 💊 海外直连
-      - 🪔 备用节点
       - DIRECT
   - name: 🌈 UDP节点
     type: select
@@ -292,7 +283,7 @@ proxy-groups:
       - 🍰 SS手动选择
       - 🍰 V2手动选择
       - DIRECT
-    filter: "SS 香港|SS 台湾|SS 日本|SS 新加坡|SS 美国|SS (?!.*港|.*台|.*日|.*韩|.*新|.*美)|V2 香港|V2 台湾|V2 日本|V2 韩国|V2 新加坡|V2 美国|V2 (?!.*港|.*台|.*日|.*韩|.*新|.*美)"
+    filter: "SS|V2"
     use:
       - ky_nodes
   - name: ☁ OneDrive
@@ -503,12 +494,12 @@ proxy-groups:
       - ky_nodes
   - name: 🍰 SS手动选择
     type: select
-    filter: "SS 香港|SS 台湾|SS 日本|SS 新加坡|SS 美国|SS (?!.*港|.*台|.*日|.*韩|.*新|.*美)"
+    filter: "SS"
     use:
       - ky_nodes
   - name: 🍰 V2手动选择
     type: select
-    filter: "V2 香港|V2 台湾|V2 日本|V2 韩国|V2 新加坡|V2 美国|V2 (?!.*港|.*台|.*日|.*韩|.*新|.*美)"
+    filter: "V2"
     use:
       - ky_nodes
   - name: ☕ 自动回落
@@ -529,7 +520,6 @@ proxy-groups:
       - 🇸🇬 新加坡 V2
       - 🇺🇸 美国 V2
       - 🚀 其他 V2
-      - 🪔 备用延迟
   - name: 📡 SS线路优先
     type: fallback
     url: http://clients.l.google.com/generate_204
@@ -698,22 +688,9 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "SS 香港|V2 香港|SS 台湾|V2 台湾|SS 日本|V2 日本|V2 韩国|SS 新加坡|V2 新加坡|SS 美国|V2 美国|SS (?!.*港|.*台|.*日|.*韩|.*新|.*美)|V2 (?!.*港|.*台|.*日|.*韩|.*新|.*美)"
+    filter: "SS|V2"
     use:
       - ky_nodes
-  - name: 🪔 备用节点
-    type: select
-    proxies:
-      - 🪔 备用延迟
-    use:
-      - backup_nodes
-  - name: 🪔 备用延迟
-    type: url-test
-    url: http://clients.l.google.com/generate_204
-    interval: 600
-    tolerance: 150
-    use:
-      - backup_nodes
 rule-providers:
   acl4ssr_unban:
     type: http
