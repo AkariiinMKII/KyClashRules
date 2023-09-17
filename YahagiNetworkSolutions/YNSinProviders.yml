@@ -1,0 +1,645 @@
+proxy-providers:
+  yns_nodes:
+    type: http
+    url: https://%SUB_ADDRESS%/link/%SUB_TOKEN%?clash=1
+    interval: 43200
+    health-check:
+      enable: true
+      url: http://clients.l.google.com/generate_204
+      interval: 300
+proxy-groups:
+  - name: 💡 默认节点
+    type: select
+    proxies:
+      - ☕ 自动回落
+      - 🌈 UDP节点
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🌈 UDP节点
+    type: select
+    proxies:
+      - 🍰 SSR手动选择
+      - 🇭🇰 香港 Auto
+      - 🇹🇼 台湾 Auto
+      - 🇯🇵 日本 Auto
+      - 🇸🇬 新加坡 Auto
+      - DIRECT
+  - name: 📺 YouTube
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 📺 Netflix
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 📺 DisneyPlus
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 📺 AbemaTV
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇯🇵 日本节点
+      - ⏳ 延迟优先
+      - DIRECT
+    filter: "日本"
+    use:
+      - yns_nodes
+  - name: 📺 Amazon
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇹🇼 台湾节点
+      - ⏳ 延迟优先
+      - DIRECT
+    filter: "台湾"
+    use:
+      - yns_nodes
+  - name: 📺 Bilibili HMT
+    type: select
+    proxies:
+      - DIRECT
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - ⏳ 延迟优先
+    filter: "香港|台湾"
+    use:
+      - yns_nodes
+  - name: 🎵 Spotify
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 💬 Telegram
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🤖 OpenAI
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🎮 PlayStation
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🎮 Steam
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🎮 SteamCN
+    type: select
+    proxies:
+      - 🎮 Steam
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🎨 EH Gallery
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - DIRECT
+    use:
+      - yns_nodes
+  - name: ☁ OneDrive
+    type: select
+    proxies:
+      - Ⓜ️ 微软服务
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 📰 国外媒体
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🎯 国内地址
+    type: select
+    proxies:
+      - DIRECT
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+  - name: 🧲 BT下载
+    type: select
+    proxies:
+      - DIRECT
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - REJECT
+  - name: ⛔ 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+  - name: 🎣 漏网之鱼
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 🍰 SSR手动选择
+      - 🍰 Trojan手动选择
+      - 🇭🇰 香港节点
+      - 🇹🇼 台湾节点
+      - 🇯🇵 日本节点
+      - 🇸🇬 新加坡节点
+      - 🇺🇸 美国节点
+      - ⏳ 延迟优先
+      - DIRECT
+  - name: 🇭🇰 香港节点
+    type: select
+    proxies:
+      - 🇭🇰 香港 Auto
+    filter: "香港"
+    use:
+      - yns_nodes
+  - name: 🇹🇼 台湾节点
+    type: select
+    proxies:
+      - 🇹🇼 台湾 Auto
+    filter: "台湾"
+    use:
+      - yns_nodes
+  - name: 🇯🇵 日本节点
+    type: select
+    proxies:
+      - 🇯🇵 日本 Auto
+    filter: "日本"
+    use:
+      - yns_nodes
+  - name: 🇸🇬 新加坡节点
+    type: select
+    proxies:
+      - 🇸🇬 新加坡 Auto
+    filter: "新加坡"
+    use:
+      - yns_nodes
+  - name: 🇺🇸 美国节点
+    type: select
+    proxies:
+      - 🇺🇸 美国 Auto
+    filter: "美国"
+    use:
+      - yns_nodes
+  - name: 🍰 SSR手动选择
+    type: select
+    filter: "(?!T)\\d+"
+    use:
+      - yns_nodes
+  - name: 🍰 Trojan手动选择
+    type: select
+    filter: "T\\d+"
+    use:
+      - yns_nodes
+  - name: ☕ 自动回落
+    type: fallback
+    url: http://clients.l.google.com/generate_204
+    interval: 600
+    proxies:
+      - 🇭🇰 香港 Auto
+      - 🇹🇼 台湾 Auto
+      - 🇯🇵 日本 Auto
+      - 🇸🇬 新加坡 Auto
+      - 🇺🇸 美国 Auto
+  - name: 🇭🇰 香港 Auto
+    type: url-test
+    url: http://clients.l.google.com/generate_204
+    interval: 600
+    tolerance: 150
+    filter: "香港"
+    use:
+      - yns_nodes
+  - name: 🇹🇼 台湾 Auto
+    type: url-test
+    url: http://clients.l.google.com/generate_204
+    interval: 600
+    tolerance: 150
+    filter: "台湾"
+    use:
+      - yns_nodes
+  - name: 🇯🇵 日本 Auto
+    type: url-test
+    url: http://clients.l.google.com/generate_204
+    interval: 600
+    tolerance: 150
+    filter: "日本"
+    use:
+      - yns_nodes
+  - name: 🇸🇬 新加坡 Auto
+    type: url-test
+    url: http://clients.l.google.com/generate_204
+    interval: 600
+    tolerance: 150
+    filter: "新加坡"
+    use:
+      - yns_nodes
+  - name: 🇺🇸 美国 Auto
+    type: url-test
+    url: http://clients.l.google.com/generate_204
+    interval: 600
+    tolerance: 150
+    filter: "美国"
+    use:
+      - yns_nodes
+  - name: ⏳ 延迟优先
+    type: url-test
+    url: http://clients.l.google.com/generate_204
+    interval: 600
+    tolerance: 150
+    use:
+      - yns_nodes
+rule-providers:
+  acl4ssr_unban:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
+    interval: 43200
+  acl4ssr_adlist:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
+    interval: 43200
+  acl4ssr_easylist:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
+    interval: 43200
+  acl4ssr_easylistcn:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
+    interval: 43200
+  acl4ssr_youtube:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
+    interval: 43200
+  acl4ssr_netflix:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+    interval: 43200
+  acl4ssr_disneyplus:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml
+    interval: 43200
+  acl4ssr_abematv:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/AbemaTV.yaml
+    interval: 43200
+  acl4ssr_amazon:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Amazon.yaml
+    interval: 43200
+  acl4ssr_bahamut:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml
+    interval: 43200
+  acl4ssr_bilibilihmt:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
+    interval: 43200
+  acl4ssr_ehgallery:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/EHGallery.yaml
+    interval: 43200
+  acl4ssr_spotify:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
+    interval: 43200
+  acl4ssr_telegram:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    interval: 43200
+  acl4ssr_openai:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml
+    interval: 43200
+  acl4ssr_psn:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Sony.yaml
+    interval: 43200
+  acl4ssr_steam:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
+    interval: 43200
+  acl4ssr_steamcn:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml
+    interval: 43200
+  acl4ssr_onedrive:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml
+    interval: 43200
+  acl4ssr_microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+    interval: 43200
+  acl4ssr_apple:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
+    interval: 43200
+  acl4ssr_proxymedia:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
+    interval: 43200
+  acl4ssr_gfwlist:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
+    interval: 43200
+  acl4ssr_chinadomain:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    interval: 43200
+  acl4ssr_chinaip:
+    type: http
+    behavior: ipcidr
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml
+    interval: 43200
+  acl4ssr_local:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
+    interval: 43200
+rules:
+  - IP-CIDR,10.8.0.0/24,DIRECT,no-resolve
+  - DOMAIN-SUFFIX,qlogo.cn,REJECT
+  - PROCESS-NAME,TIM.exe,DIRECT
+  - PROCESS-NAME,TIMApp.exe,DIRECT
+  - PROCESS-NAME,QQExternal.exe,DIRECT
+  - DOMAIN-SUFFIX,chat.bilibili.com,DIRECT
+  - DOMAIN-SUFFIX,live.bilibili.com,DIRECT
+  - DOMAIN,stun.chat.bilibili.com,REJECT
+  - DOMAIN-SUFFIX,msftconnecttest.com,💡 默认节点
+  - DOMAIN,dl.google.com,💡 默认节点
+  - DOMAIN,download.teamviewer.com,💡 默认节点
+  - DOMAIN,dl.teamviewer.com,💡 默认节点
+  - PROCESS-NAME,qbittorrent.exe,🧲 BT下载
+  - PROCESS-NAME,Motrix.exe,🧲 BT下载
+  - PROCESS-NAME,aria2c.exe,🧲 BT下载
+  - DOMAIN-KEYWORD,qbittorrent,🧲 BT下载
+  - DOMAIN-KEYWORD,aria2,🧲 BT下载
+  - DOMAIN-KEYWORD,xunlei,🧲 BT下载
+  - DOMAIN-KEYWORD,yunpan,🧲 BT下载
+  - DOMAIN-KEYWORD,Thunder,🧲 BT下载
+  - DOMAIN-KEYWORD,XLLiveUD,🧲 BT下载
+  - RULE-SET,acl4ssr_ehgallery,🎨 EH Gallery
+  - RULE-SET,acl4ssr_unban,DIRECT
+  - RULE-SET,acl4ssr_adlist,⛔ 广告拦截
+  - RULE-SET,acl4ssr_easylist,⛔ 广告拦截
+  - RULE-SET,acl4ssr_easylistcn,⛔ 广告拦截
+  - RULE-SET,acl4ssr_telegram,💬 Telegram
+  - RULE-SET,acl4ssr_openai,🤖 OpenAI
+  - RULE-SET,acl4ssr_youtube,📺 YouTube
+  - RULE-SET,acl4ssr_netflix,📺 Netflix
+  - RULE-SET,acl4ssr_disneyplus,📺 DisneyPlus
+  - RULE-SET,acl4ssr_abematv,📺 AbemaTV
+  - RULE-SET,acl4ssr_amazon,📺 Amazon
+  - RULE-SET,acl4ssr_bahamut,📺 巴哈姆特
+  - RULE-SET,acl4ssr_bilibilihmt,📺 Bilibili HMT
+  - RULE-SET,acl4ssr_spotify,🎵 Spotify
+  - RULE-SET,acl4ssr_psn,🎮 PlayStation
+  - DOMAIN-KEYWORD,steamstatic,🎮 Steam
+  - RULE-SET,acl4ssr_steamcn,🎮 SteamCN
+  - PROCESS-NAME,steam.exe,🎮 Steam
+  - PROCESS-NAME,SteamService.exe,🎮 Steam
+  - PROCESS-NAME,steamwebhelper.exe,🎮 Steam
+  - RULE-SET,acl4ssr_steam,🎮 Steam
+  - RULE-SET,acl4ssr_onedrive,☁ OneDrive
+  - RULE-SET,acl4ssr_microsoft,Ⓜ️ 微软服务
+  - RULE-SET,acl4ssr_apple,🍎 苹果服务
+  - RULE-SET,acl4ssr_proxymedia,📰 国外媒体
+  - RULE-SET,acl4ssr_gfwlist,💡 默认节点
+  - IP-CIDR,119.28.28.28/32,DIRECT,no-resolve
+  - IP-CIDR,182.254.116.0/24,DIRECT
+  - DOMAIN-SUFFIX,smtp,DIRECT
+  - RULE-SET,acl4ssr_chinadomain,🎯 国内地址
+  - RULE-SET,acl4ssr_chinaip,🎯 国内地址
+  - GEOIP,CN,🎯 国内地址
+  - RULE-SET,acl4ssr_local,DIRECT
+  - MATCH,🎣 漏网之鱼
