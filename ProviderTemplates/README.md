@@ -1,18 +1,12 @@
-# 关于 KyCloudinProviders.yml
+# 关于 YNSinProviders.yml
 
 ## 说明
 
-### 关于 [KyCloud](https://github.com/AkariiinMKII/SubConfig/tree/KyCloud) 分支的 [KyCloudinProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloud/ProviderTemplates/KyCloudinProviders.yml)
+### 关于 [YNSinProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/YahagiNetworkSolutions/ProviderTemplates/YNSinProviders.yml)
 
-- 此文件为适用于 KyCloud 的配置文件模板，可根据需求自行 fork 并修改配置内容
+- 此文件为适用于 YahagiNetworkSolutions 的配置文件模板，可根据需求自行 fork 并修改配置内容
 - 由于此配置使用了 [Proxy Providers](https://dreamacro.github.io/clash/configuration/outbound.html#proxy-providers) 、 [Rule Providers](https://dreamacro.github.io/clash/premium/rule-providers.html) 、 [filter](https://github.com/Dreamacro/clash/pull/2518) 、 [regexp2](https://github.com/Dreamacro/clash/pull/2802) 等功能，需要 [Clash for Windows v0.20.28](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.28) 及以上版本
-- 由于 KyCloud 提供了 [subconverter](https://github.com/tindy2013/subconverter) 订阅转换服务，此配置模板会使用该服务重命名节点以优化可读性，实际应用时可以选择自建服务后端、公共服务后端或 KyCloud 提供的服务后端
-- 推荐使用 [FastGit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 `https://raw.fgit.cf/AkariiinMKII/SubConfig/KyCloud/ProviderTemplates/KyCloudinProviders.yml` 作为订阅地址
-
-### 关于 [KyCloudwithBackupNodes](https://github.com/AkariiinMKII/SubConfig/tree/KyCloudwithBackupNodes) 分支的 [KyCloudinProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloudwithBackupNodes/ProviderTemplates/KyCloudinProviders.yml)
-
-- 此文件为基于 KyCloud 分支添加备用订阅的版本，以应对机场临时瘫痪，软件版本要求同上
-- 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/KyCloudwithBackupNodes/ProviderTemplates/KyCloudinProviders.yml` 并修改 parser 脚本中的对应内容
+- 推荐使用 [FastGit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 `https://raw.fgit.cf/AkariiinMKII/SubConfig/YahagiNetworkSolutions/ProviderTemplates/YNSinProviders.yml` 作为订阅地址
 
 ## 使用
 
@@ -22,31 +16,21 @@
 
 ```yaml
 parsers: # array
-  - reg: '\/SubConfig\/.+\/KyCloudinProviders'
+  - reg: '\/SubConfig\/.+\/YNSinProviders'
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
 
-        // 请填写 KyCloud 订阅信息
-        const subcon = 'xxxxxx' // 将单引号中的 xxxxxx 改为 subconverter 后端服务地址，需要包含 http:// 或 https:// ，如使用非默认端口需添加端口号，例如 https://api.subconverter.com 或 http://127.0.0.1:25500
-        const suburl = 'xxxxxx' // 将单引号中的 xxxxxx 改为 KyCloud 的完整 Clash 个人订阅地址，需要包含 https://
-
-        // 如用于包含备用订阅的模板，请删除以下三行句首的注释符，并根据说明填写信息
-        //const backupsub = 'xxxxxx' // 将单引号中的 xxxxxx 改为备用代理订阅地址，格式要求同 KyCloud 个人订阅
-        //const backupsubencode = encodeURIComponent(backupsub)
-        //raw = raw.replace(/\%BACKUP_SUB\%/gm,`${backupsubencode}`)
+        // 请填写订阅信息
+        const suburl = 'xxxxxx' // 将单引号中的 xxxxxx 改为完整的 Clash 个人订阅地址
 
         // 如需预置 dns 字段,请删除以下两行句首的注释符
         //const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
         //raw = `${setdns.data}${raw}`
 
         // 开始处理配置文件
-        const subconaddr = subcon.match(/^(http:\/\/.*?|https:\/\/.*?)(?:\/|$)/)[1]
         const subaddr = suburl.match(/\/\/(.*?)\//)[1]
-        const subid = suburl.match(/sid=(.*?)(?:&|$)/)[1]
-        const subtoken = suburl.match(/token=(.*?)(?:&|$)/)[1]
-        raw = raw.replace(/http:\/\/\%SUBCON_BACKEND\%/gm,`${subconaddr}`)
+        const subtoken = suburl.match(/link\/(.*?)\?/)[1]
         raw = raw.replace(/\%SUB_ADDRESS\%/gm,`${subaddr}`)
-        raw = raw.replace(/\%SUB_ID\%/gm,`${subid}`)
         raw = raw.replace(/\%SUB_TOKEN\%/gm,`${subtoken}`)
 
         // 如需在 Profile 选项卡中显示订阅信息，请删除以下五行句首的注释符
@@ -67,7 +51,7 @@ parsers: # array
 
 ```yaml
 parsers: # array
-  - url: xxxxxx # 将 xxxxxx 改为 KyCloud 的 Clash 个人订阅地址
+  - url: xxxxxx # 将 xxxxxx 改为 Clash 个人订阅地址
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
         const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
