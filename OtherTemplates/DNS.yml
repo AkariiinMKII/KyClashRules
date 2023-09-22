@@ -1,0 +1,61 @@
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  use-hosts: true
+  fake-ip-filter:
+    - WORKGROUP
+    - +.lan
+    - stun.*.*.*
+    - stun.*.*
+    - +.time.windows.com
+    - +.msftconnecttest.com
+    - +.msftncsi.com
+    - xbox.*.*.microsoft.com
+    - +.ipv6.microsoft.com
+    - +.xboxlive.com
+    - +.stun.playstation.net
+    - +.srv.nintendo.net
+    - +.qq.com
+    - +.qlogo.cn
+    - +.music.163.com
+    - +.126.net
+    - musicapi.taihe.com
+    - music.taihe.com
+    - songsearch.kugou.com
+    - trackercdn.kugou.com
+    - +.kuwo.cn
+    - api-jooxtt.sanook.com
+    - api.joox.com
+    - joox.com
+    - +.xiami.com
+    - +.music.migu.cn
+    - speedtest.cros.wr.pvp.net
+    - +.epicgames.com
+  default-nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+  nameserver:
+    - 119.29.29.29
+    - 223.5.5.5
+    - 8.8.4.4
+  fallback:
+    - https://162.159.36.1/dns-query
+    - https://1.0.0.1/dns-query
+  nameserver-policy:
+      '+.time.windows.com': '8.8.8.8'
+      '+.msftconnecttest.com': '8.8.8.8'
+      '+.msftncsi.com': '8.8.8.8'
+      '+.fgit.cf': '8.8.8.8'
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 0.0.0.0/8
+      - 127.0.0.0/8
+    domain:
+      - +.google.com
+      - +.youtube.com
+      - +.twitter.com
+      - +.github.com
+      - +.githubusercontent.com
