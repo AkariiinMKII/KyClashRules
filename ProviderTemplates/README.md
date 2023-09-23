@@ -11,8 +11,13 @@
 
 ### 关于 [KyCloudwithBackupNodes](https://github.com/AkariiinMKII/SubConfig/tree/KyCloudwithBackupNodes) 分支的 [KyCloudinProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloudwithBackupNodes/ProviderTemplates/KyCloudinProviders.yml)
 
-- 此文件为基于 KyCloud 分支添加备用订阅的版本，以应对机场临时瘫痪，软件版本要求同上
+- 此文件为基于 KyCloud 分支添加备用代理的版本，以应对机场临时瘫痪，软件版本要求同上
 - 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/KyCloudwithBackupNodes/ProviderTemplates/KyCloudinProviders.yml` 并修改 parser 脚本中的对应内容
+
+### 关于 [KyCloudsubInput](https://github.com/AkariiinMKII/SubConfig/tree/KyCloudsubInput) 分支的 [KyCloudinProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloudsubInput/ProviderTemplates/KyCloudinProviders.yml)
+
+- 此文件为基于 KyCloud 移除了 subconverter 订阅转换服务的版本，软件版本要求同上
+- 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/KyCloudsubInput/ProviderTemplates/KyCloudinProviders.yml` 并修改 parser 脚本中的对应内容
 
 ## 使用
 
@@ -27,11 +32,15 @@ parsers: # array
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
 
         // 请填写 KyCloud 订阅信息
-        const subcon = 'xxxxxx' // 将单引号中的 xxxxxx 改为 subconverter 后端服务地址，需要包含 http:// 或 https:// ，如使用非默认端口需添加端口号，例如 https://api.subconverter.com 或 http://127.0.0.1:25500
         const suburl = 'xxxxxx' // 将单引号中的 xxxxxx 改为 KyCloud 的完整 Clash 个人订阅地址，需要包含 https://
 
-        // 如用于包含备用订阅的模板，请删除以下三行句首的注释符，并根据说明填写信息
-        //const backupsub = 'xxxxxx' // 将单引号中的 xxxxxx 改为备用代理订阅地址，格式要求同 KyCloud 个人订阅
+        // 如用于含有 subconverter 订阅转换服务的模板，请删除以下三行句首的注释符，并根据说明填写信息
+        //const subcon = 'xxxxxx' // 将单引号中的 xxxxxx 改为 subconverter 后端服务地址，需要包含 http:// 或 https:// ，如使用非默认端口需添加端口号，例如 https://api.subconverter.com 或 http://127.0.0.1:25500
+        //const subconaddr = subcon.match(/^(http:\/\/.*?|https:\/\/.*?)(?:\/|$)/)[1]
+        //raw = raw.replace(/http:\/\/\%SUBCON_BACKEND\%/gm,`${subconaddr}`)
+
+        // 如用于含有备用代理的模板，请删除以下三行句首的注释符，并根据说明填写信息
+        //const backupsub = 'xxxxxx' // 将单引号中的 xxxxxx 改为备用代理的订阅地址，格式要求同 KyCloud 个人订阅
         //const backupsubencode = encodeURIComponent(backupsub)
         //raw = raw.replace(/\%BACKUP_SUB\%/gm,`${backupsubencode}`)
 
@@ -40,11 +49,9 @@ parsers: # array
         //raw = `${setdns.data}${raw}`
 
         // 开始处理配置文件
-        const subconaddr = subcon.match(/^(http:\/\/.*?|https:\/\/.*?)(?:\/|$)/)[1]
         const subaddr = suburl.match(/\/\/(.*?)\//)[1]
         const subid = suburl.match(/sid=(.*?)(?:&|$)/)[1]
         const subtoken = suburl.match(/token=(.*?)(?:&|$)/)[1]
-        raw = raw.replace(/http:\/\/\%SUBCON_BACKEND\%/gm,`${subconaddr}`)
         raw = raw.replace(/\%SUB_ADDRESS\%/gm,`${subaddr}`)
         raw = raw.replace(/\%SUB_ID\%/gm,`${subid}`)
         raw = raw.replace(/\%SUB_TOKEN\%/gm,`${subtoken}`)
