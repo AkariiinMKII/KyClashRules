@@ -61,7 +61,7 @@ parsers: # array
 ```
 
 - 可以使用 parser 对本配置文件进行多次编辑（如追加规则条目），但需要保证以上脚本最后执行，即放置在 parser 队列末尾
-- 不推荐使用脚本预置 `dns` 字段，如有需要可使用 [Mixin](https://docs.cfw.lbyczf.com/contents/mixin.html) 功能添加
+- 不推荐使用脚本预置 `dns` 字段，如有需要可使用 [Mixin](https://docs.cfw.lbyczf.com/contents/mixin.html) 功能添加。[字段内容](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml)
 - 如果打开了 Clash for Windows 的 [TUN Mode](https://docs.cfw.lbyczf.com/contents/tun.html) 开关，预置在配置文件中的 `dns` 字段会被覆盖，必须通过 Mixin 功能添加才能使字段生效
 - 使用 [diff](https://docs.cfw.lbyczf.com/contents/diff.html) 或者 [parser](https://docs.cfw.lbyczf.com/contents/parser.html#%E8%BF%9B%E9%98%B6%E6%96%B9%E6%B3%95-javascript) 也可以在原始订阅中预置 `dns` 字段，但不推荐，理由同上。预置用脚本如下
 
