@@ -6,6 +6,7 @@ dns:
   fake-ip-filter:
     - WORKGROUP
     - +.lan
+    - +.internal
     - stun.*.*.*
     - stun.*.*
     - +.time.windows.com
