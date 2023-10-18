@@ -115,6 +115,21 @@ proxy-groups:
     filter: "SS 日本|V2 日本"
     use:
       - ky_nodes
+  - name: 📺 Niconico
+    type: select
+    proxies:
+      - 💡 默认节点
+      - 🌈 UDP节点
+      - ☕ 自动回落
+      - 📡 SS线路优先
+      - 🍰 SS手动选择
+      - 🍰 V2手动选择
+      - 🇯🇵 日本节点
+      - ⏳ 延迟优先
+      - DIRECT
+    filter: "SS 日本|V2 日本"
+    use:
+      - ky_nodes
   - name: 📺 Amazon
     type: select
     proxies:
@@ -732,6 +747,11 @@ rule-providers:
     behavior: classical
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/AbemaTV.yaml
     interval: 43200
+  acl4ssr_niconico:
+    type: http
+    behavior: classical
+    url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Niconico.yaml
+    interval: 43200
   acl4ssr_amazon:
     type: http
     behavior: classical
@@ -855,6 +875,7 @@ rules:
   - RULE-SET,acl4ssr_netflix,📺 Netflix
   - RULE-SET,acl4ssr_disneyplus,📺 DisneyPlus
   - RULE-SET,acl4ssr_abematv,📺 AbemaTV
+  - RULE-SET,acl4ssr_niconico,📺 Niconico
   - RULE-SET,acl4ssr_amazon,📺 Amazon
   - RULE-SET,acl4ssr_bahamut,📺 巴哈姆特
   - RULE-SET,acl4ssr_bilibilihmt,📺 Bilibili HMT
