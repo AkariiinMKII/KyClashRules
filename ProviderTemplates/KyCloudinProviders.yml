@@ -1,10 +1,12 @@
 proxy-providers:
   ky_account_info:
     type: http
+    path: ./proxy-providers/ky_account_info.yaml
     url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/osubscribe.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=流量|时间&emoji=false&fdn=false&new_name=true&rename=⛽剩余流量:(\d%2B)G@⛽%20剩余流量%20$1G`到期时间:(\d%2B)-(\d%2B)-(\d%2B)@📅%20到期时间%20$1.$2.$3
     interval: 1800
   ky_nodes:
     type: http
+    path: ./proxy-providers/ky_nodes.yaml
     url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&exclude=回国&emoji=false&fdn=true&new_name=true&sort=true&rename=^（SS）IEPL-@SS%20`^IEPL-@V2%20`【仅海外用户】@DC%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
@@ -710,136 +712,163 @@ rule-providers:
   acl4ssr_unban:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_unban.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
     interval: 43200
   acl4ssr_adlist:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_adlist.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
     interval: 43200
   acl4ssr_easylist:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_easylist.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
     interval: 43200
   acl4ssr_easylistcn:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_easylistcn.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
     interval: 43200
   acl4ssr_youtube:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_youtube.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
     interval: 43200
   acl4ssr_netflix:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_netflix.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
     interval: 43200
   acl4ssr_disneyplus:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_disneyplus.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml
     interval: 43200
   acl4ssr_abematv:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_abematv.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/AbemaTV.yaml
     interval: 43200
   acl4ssr_niconico:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_niconico.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Niconico.yaml
     interval: 43200
   acl4ssr_amazon:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_amazon.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Amazon.yaml
     interval: 43200
   acl4ssr_bahamut:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_bahamut.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bahamut.yaml
     interval: 43200
   acl4ssr_bilibilihmt:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_bilibilihmt.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/BilibiliHMT.yaml
     interval: 43200
   acl4ssr_ehgallery:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_ehgallery.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/EHGallery.yaml
     interval: 43200
   acl4ssr_spotify:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_spotify.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Spotify.yaml
     interval: 43200
   acl4ssr_telegram:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_telegram.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
     interval: 43200
   acl4ssr_openai:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_openai.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OpenAi.yaml
     interval: 43200
   acl4ssr_psn:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_psn.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Sony.yaml
     interval: 43200
   acl4ssr_steam:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_steam.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Steam.yaml
     interval: 43200
   acl4ssr_steamcn:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_steamcn.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/SteamCN.yaml
     interval: 43200
   acl4ssr_onedrive:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_onedrive.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml
     interval: 43200
   acl4ssr_microsoft:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_microsoft.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
     interval: 43200
   acl4ssr_apple:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_apple.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Apple.yaml
     interval: 43200
   acl4ssr_proxymedia:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_proxymedia.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
     interval: 43200
   acl4ssr_gfwlist:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_gfwlist.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
     interval: 43200
   acl4ssr_chinadomain:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_chinadomain.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
     interval: 43200
   acl4ssr_chinaip:
     type: http
     behavior: ipcidr
+    path: ./rule-providers/acl4ssr_chinaip.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml
     interval: 43200
   acl4ssr_local:
     type: http
     behavior: classical
+    path: ./rule-providers/acl4ssr_local.yaml
     url: https://raw.fgit.cf/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
     interval: 43200
 rules:
