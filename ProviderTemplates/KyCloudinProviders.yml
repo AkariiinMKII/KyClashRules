@@ -2,12 +2,12 @@ proxy-providers:
   ky_account_info:
     type: http
     path: ./proxy-providers/ky_account_info.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/osubscribe.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=流量|时间&emoji=false&fdn=false&new_name=true&rename=⛽剩余流量:(\d%2B)G@⛽%20剩余流量%20$1G`到期时间:(\d%2B)-(\d%2B)-(\d%2B)@📅%20到期时间%20$1.$2.$3
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/osubscribe.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&include=流量|时间&emoji=false&fdn=false&new_name=true&rename=⛽剩余流量:(\d%2B)G@⛽%20剩余流量%20$1%20GiB`到期时间:(\d%2B)-(\d%2B)-(\d%2B)@📅%20到期时间%20$1.$2.$3
     interval: 1800
   ky_nodes:
     type: http
     path: ./proxy-providers/ky_nodes.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&exclude=回国&emoji=false&fdn=true&new_name=true&sort=true&rename=^（SS）IEPL-@SS%20`^IEPL-@V2%20`【仅海外用户】@DC%20`【倍率:(\d%2B)】@%20($1x)`(?'a'[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&exclude=回国&emoji=false&fdn=true&new_name=true&sort=true&rename=^（SS）IEPL-@SS%20`^IEPL-@V2%20`【仅海外用户】@DC%20`【倍率:(\d%2B)】@%20($1x)`(%3F%27a%27[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
