@@ -876,6 +876,8 @@ rules:
   - DOMAIN,download.teamviewer.com,💡 默认节点
   - DOMAIN,dl.teamviewer.com,💡 默认节点
   - DOMAIN-SUFFIX,mora.jp,🇯🇵 日本节点
+  - DOMAIN,bard.google.com,🇺🇸 美国节点
+  - DOMAIN,labs.google.com,🇺🇸 美国节点
   - PROCESS-NAME,qbittorrent.exe,🧲 BT下载
   - PROCESS-NAME,Motrix.exe,🧲 BT下载
   - PROCESS-NAME,aria2c.exe,🧲 BT下载
