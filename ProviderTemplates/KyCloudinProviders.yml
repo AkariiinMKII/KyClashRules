@@ -57,6 +57,7 @@ proxy-groups:
       - 🇸🇬 新加坡 SS
       - 🇺🇸 美国 SS
       - 🚀 其他 SS
+      - 🪔 备用节点
       - DIRECT
   - name: 📺 YouTube
     type: select
@@ -75,6 +76,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 📺 Netflix
     type: select
@@ -93,6 +95,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 📺 DisneyPlus
     type: select
@@ -111,6 +114,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 📺 AbemaTV
     type: select
@@ -123,6 +127,7 @@ proxy-groups:
       - 🍰 V2手动选择
       - 🇯🇵 日本节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
     filter: "SS 日本|V2 日本"
     use:
@@ -138,6 +143,7 @@ proxy-groups:
       - 🍰 V2手动选择
       - 🇯🇵 日本节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
     filter: "SS 日本|V2 日本"
     use:
@@ -159,6 +165,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 📺 巴哈姆特
     type: select
@@ -171,6 +178,7 @@ proxy-groups:
       - 🍰 V2手动选择
       - 🇹🇼 台湾节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
     filter: "SS 台湾|V2 台湾"
     use:
@@ -188,6 +196,7 @@ proxy-groups:
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
     filter: "SS 香港|SS 台湾|V2 香港|V2 台湾"
     use:
       - ky_nodes
@@ -208,6 +217,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 💬 Telegram
     type: select
@@ -226,6 +236,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🤖 OpenAI
     type: select
@@ -244,6 +255,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🎮 PlayStation
     type: select
@@ -262,6 +274,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🎮 Steam
     type: select
@@ -280,6 +293,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🎮 SteamCN
     type: select
@@ -299,6 +313,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🎨 EH Gallery
     type: select
@@ -309,6 +324,7 @@ proxy-groups:
       - 📡 SS线路优先
       - 🍰 SS手动选择
       - 🍰 V2手动选择
+      - 🪔 备用节点
       - DIRECT
     filter: "SS|V2"
     use:
@@ -331,6 +347,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: Ⓜ️ 微软服务
     type: select
@@ -349,6 +366,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🍎 苹果服务
     type: select
@@ -367,6 +385,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 📰 国外媒体
     type: select
@@ -385,6 +404,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🎯 国内地址
     type: select
@@ -404,6 +424,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
   - name: 🧲 BT下载
     type: select
     proxies:
@@ -422,6 +443,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - REJECT
   - name: ⛔ 广告拦截
     type: select
@@ -434,6 +456,7 @@ proxy-groups:
       - 📡 SS线路优先
       - 🍰 SS手动选择
       - 🍰 V2手动选择
+      - 🪔 备用节点
   - name: 🎣 漏网之鱼
     type: select
     proxies:
@@ -451,6 +474,7 @@ proxy-groups:
       - 🇺🇸 美国节点
       - 🚀 其他节点
       - ⏳ 延迟优先
+      - 🪔 备用节点
       - DIRECT
   - name: 🇭🇰 香港节点
     type: select
