@@ -44,10 +44,10 @@ dns:
     - https://162.159.36.1/dns-query
     - https://1.0.0.1/dns-query
   nameserver-policy:
-      '+.time.windows.com': '8.8.8.8'
-      '+.msftconnecttest.com': '8.8.8.8'
-      '+.msftncsi.com': '8.8.8.8'
-      '+.fgit.cf': '8.8.8.8'
+    '+.time.windows.com': '8.8.8.8'
+    '+.msftconnecttest.com': '8.8.8.8'
+    '+.msftncsi.com': '8.8.8.8'
+    '+.fgit.cf': '8.8.8.8'
   fallback-filter:
     geoip: true
     geoip-code: CN
