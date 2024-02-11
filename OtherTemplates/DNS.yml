@@ -47,7 +47,7 @@ dns:
     '+.time.windows.com': '8.8.8.8'
     '+.msftconnecttest.com': '8.8.8.8'
     '+.msftncsi.com': '8.8.8.8'
-    '+.fgit.cf': '8.8.8.8'
+    '+.githubusercontent.com': '8.8.8.8'
   fallback-filter:
     geoip: true
     geoip-code: CN
