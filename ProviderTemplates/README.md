@@ -7,17 +7,17 @@
 - 此文件为适用于 KyCloud 的配置文件模板，可根据需求自行 fork 并修改配置内容
 - 由于此配置使用了 [Proxy Providers](https://dreamacro.github.io/clash/configuration/outbound.html#proxy-providers) 、 [Rule Providers](https://dreamacro.github.io/clash/premium/rule-providers.html) 、 [filter](https://github.com/Dreamacro/clash/pull/2518) 、 [regexp2](https://github.com/Dreamacro/clash/pull/2802) 等功能，需要 [Clash for Windows v0.20.28](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.28) 及以上版本
 - 由于 KyCloud 提供了 [subconverter](https://github.com/tindy2013/subconverter) 订阅转换服务，此配置模板会使用该服务重命名节点以优化可读性，实际应用时可以选择自建服务后端、公共服务后端或 KyCloud 提供的服务后端
-- 推荐使用 [FastGit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 `https://raw.fgit.cf/AkariiinMKII/SubConfig/KyCloud/ProviderTemplates/KyCloudinProviders.yml` 作为订阅地址
+- 此模板订阅地址为 `https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloud/ProviderTemplates/KyCloudinProviders.yml`
 
 ### 关于 [KyCloudwithBackupNodes](https://github.com/AkariiinMKII/SubConfig/tree/KyCloudwithBackupNodes) 分支的 [KyCloudinProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloudwithBackupNodes/ProviderTemplates/KyCloudinProviders.yml)
 
 - 此文件为基于 KyCloud 分支添加备用代理的版本，以应对机场临时瘫痪，软件版本要求同上
-- 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/KyCloudwithBackupNodes/ProviderTemplates/KyCloudinProviders.yml` 并修改 parser 脚本中的对应内容
+- 使用方法同上，只需将订阅地址改为 `https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloudwithBackupNodes/ProviderTemplates/KyCloudinProviders.yml` 并修改 parser 脚本中的对应内容
 
 ### 关于 [KyCloudsubInput](https://github.com/AkariiinMKII/SubConfig/tree/KyCloudsubInput) 分支的 [KyCloudinProviders.yml](https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloudsubInput/ProviderTemplates/KyCloudinProviders.yml)
 
 - 此文件为基于 KyCloud 移除了 subconverter 订阅转换服务的版本，软件版本要求同上
-- 使用方法同上，只需将订阅地址改为 `https://raw.fgit.cf/AkariiinMKII/SubConfig/KyCloudsubInput/ProviderTemplates/KyCloudinProviders.yml` 并修改 parser 脚本中的对应内容
+- 使用方法同上，只需将订阅地址改为 `https://raw.githubusercontent.com/AkariiinMKII/SubConfig/KyCloudsubInput/ProviderTemplates/KyCloudinProviders.yml` 并修改 parser 脚本中的对应内容
 
 ## 使用
 
@@ -45,7 +45,7 @@ parsers: # array
         //raw = raw.replace(/\%BACKUP_SUB\%/gm,`${backupsubencode}`)
 
         // 如需预置 dns 字段,请删除以下两行句首的注释符
-        //const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
+        //const setdns = await axios.get('https://raw.githubusercontent.com/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
         //raw = `${setdns.data}${raw}`
 
         // 开始处理配置文件
@@ -77,7 +77,7 @@ parsers: # array
   - url: xxxxxx # 将 xxxxxx 改为 KyCloud 的 Clash 个人订阅地址
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
-        const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
+        const setdns = await axios.get('https://raw.githubusercontent.com/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
         if (setdns.status === 200 && setdns.data) {
           return `${setdns.data}\n${raw}`
         }
