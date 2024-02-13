@@ -6,7 +6,7 @@
 
 - 此文件为适用于 YahagiNetworkSolutions 的配置文件模板，可根据需求自行 fork 并修改配置内容
 - 由于此配置使用了 [Proxy Providers](https://dreamacro.github.io/clash/configuration/outbound.html#proxy-providers) 、 [Rule Providers](https://dreamacro.github.io/clash/premium/rule-providers.html) 、 [filter](https://github.com/Dreamacro/clash/pull/2518) 、 [regexp2](https://github.com/Dreamacro/clash/pull/2802) 等功能，需要 [Clash for Windows v0.20.28](https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.20.28) 及以上版本
-- 推荐使用 [FastGit](https://doc.fastgit.org/zh-cn/guide.html) 代理地址 `https://raw.fgit.cf/AkariiinMKII/SubConfig/YahagiNetworkSolutions/ProviderTemplates/YNSinProviders.yml` 作为订阅地址
+- 此模板订阅地址为 `https://raw.githubusercontent.com/AkariiinMKII/SubConfig/YahagiNetworkSolutions/ProviderTemplates/YNSinProviders.yml`
 
 ## 使用
 
@@ -24,7 +24,7 @@ parsers: # array
         const suburl = 'xxxxxx' // 将单引号中的 xxxxxx 改为完整的 Clash 个人订阅地址
 
         // 如需预置 dns 字段,请删除以下两行句首的注释符
-        //const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
+        //const setdns = await axios.get('https://raw.githubusercontent.com/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
         //raw = `${setdns.data}${raw}`
 
         // 开始处理配置文件
@@ -54,7 +54,7 @@ parsers: # array
   - url: xxxxxx # 将 xxxxxx 改为 Clash 个人订阅地址
     code: |
       module.exports.parse = async (raw, { axios, yaml, notify, console }) => {
-        const setdns = await axios.get('https://raw.fgit.cf/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
+        const setdns = await axios.get('https://raw.githubusercontent.com/AkariiinMKII/SubConfig/CommonFiles/OtherTemplates/DNS.yml')
         if (setdns.status === 200 && setdns.data) {
           return `${setdns.data}\n${raw}`
         }
