@@ -921,6 +921,8 @@ rule-providers:
     interval: 43200
 rules:
   - IP-CIDR,10.8.0.0/24,DIRECT,no-resolve
+  - DOMAIN,lcs-cops.adobe.io,DIRECT
+  - DOMAIN-SUFFIX,adobe.io,REJECT
   - DOMAIN-SUFFIX,qlogo.cn,REJECT
   - PROCESS-NAME,TIM.exe,DIRECT
   - PROCESS-NAME,TIMApp.exe,DIRECT
