@@ -7,7 +7,7 @@ proxy-providers:
   ky_nodes:
     type: http
     path: ./proxy-providers/ky_nodes.yaml
-    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&exclude=回国&emoji=false&fdn=true&new_name=true&sort=true&rename=^（SS）IEPL-@SS%20`^IEPL-@V2%20`【仅海外用户】@DC%20`【倍率:(\d%2B)】@%20($1x)`(%3F%27a%27[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
+    url: http://%SUBCON_BACKEND%/sub?target=clash&list=true&url=https%3A//%SUB_ADDRESS%/modules/servers/V2RaySocks/subscribe/clash.php%3Fsid%3D%SUB_ID%%26token%3D%SUB_TOKEN%&exclude=回国&emoji=false&fdn=true&new_name=true&sort=true&rename=^（SS）%5BENSW%5C-%5D%2AIEPL-@SS%20`^%5BENSW%5C-%5D%2AIEPL-@V2%20`【仅海外用户】@DC%20`【倍率:(\d%2B)】@%20($1x)`(%3F%27a%27[^a-zA-Z0-9])(\d)($|%20\()@${a}0$2$3
     interval: 43200
     health-check:
       enable: true
