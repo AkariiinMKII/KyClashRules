@@ -105,7 +105,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - ⏳ 延迟优先
       - DIRECT
-    filter: "IEPL-日本"
+    filter: "[ENSW\-]*IEPL-日本"
     use:
       - ky_nodes
   - name: 📺 Niconico
@@ -120,7 +120,7 @@ proxy-groups:
       - 🇯🇵 日本节点
       - ⏳ 延迟优先
       - DIRECT
-    filter: "IEPL-日本"
+    filter: "[ENSW\-]*IEPL-日本"
     use:
       - ky_nodes
   - name: 📺 Amazon
@@ -153,7 +153,7 @@ proxy-groups:
       - 🇹🇼 台湾节点
       - ⏳ 延迟优先
       - DIRECT
-    filter: "IEPL-台湾"
+    filter: "[ENSW\-]*IEPL-台湾"
     use:
       - ky_nodes
   - name: 📺 Bilibili HMT
@@ -169,7 +169,7 @@ proxy-groups:
       - 🇭🇰 香港节点
       - 🇹🇼 台湾节点
       - ⏳ 延迟优先
-    filter: "IEPL-香港|IEPL-台湾"
+    filter: "[ENSW\-]*IEPL-香港|[ENSW\-]*IEPL-台湾"
     use:
       - ky_nodes
   - name: 🎵 Spotify
@@ -291,7 +291,7 @@ proxy-groups:
       - 🍰 SS手动选择
       - 🍰 V2手动选择
       - DIRECT
-    filter: "IEPL"
+    filter: "[ENSW\-]*IEPL"
     use:
       - ky_nodes
   - name: ☁ OneDrive
@@ -439,7 +439,7 @@ proxy-groups:
       - 🇭🇰 香港 Auto
       - 🇭🇰 香港 SS
       - 🇭🇰 香港 V2
-    filter: "IEPL-香港"
+    filter: "[ENSW\-]*IEPL-香港"
     use:
       - ky_nodes
   - name: 🇹🇼 台湾节点
@@ -448,7 +448,7 @@ proxy-groups:
       - 🇹🇼 台湾 Auto
       - 🇹🇼 台湾 SS
       - 🇹🇼 台湾 V2
-    filter: "IEPL-台湾"
+    filter: "[ENSW\-]*IEPL-台湾"
     use:
       - ky_nodes
   - name: 🇯🇵 日本节点
@@ -457,7 +457,7 @@ proxy-groups:
       - 🇯🇵 日本 Auto
       - 🇯🇵 日本 SS
       - 🇯🇵 日本 V2
-    filter: "IEPL-日本"
+    filter: "[ENSW\-]*IEPL-日本"
     use:
       - ky_nodes
   - name: 🇰🇷 韩国节点
@@ -465,7 +465,7 @@ proxy-groups:
     proxies:
       - 🇰🇷 韩国 Auto
       - 🇰🇷 韩国 V2
-    filter: "IEPL-韩国"
+    filter: "[ENSW\-]*IEPL-韩国"
     use:
       - ky_nodes
   - name: 🇸🇬 新加坡节点
@@ -474,7 +474,7 @@ proxy-groups:
       - 🇸🇬 新加坡 Auto
       - 🇸🇬 新加坡 SS
       - 🇸🇬 新加坡 V2
-    filter: "IEPL-新加坡"
+    filter: "[ENSW\-]*IEPL-新加坡"
     use:
       - ky_nodes
   - name: 🇺🇸 美国节点
@@ -483,7 +483,7 @@ proxy-groups:
       - 🇺🇸 美国 Auto
       - 🇺🇸 美国 SS
       - 🇺🇸 美国 V2
-    filter: "IEPL-美国"
+    filter: "[ENSW\-]*IEPL-美国"
     use:
       - ky_nodes
   - name: 🚀 其他节点
@@ -492,7 +492,7 @@ proxy-groups:
       - 🚀 其他 Auto
       - 🚀 其他 SS
       - 🚀 其他 V2
-    filter: "IEPL-(?!.*港|.*台|.*日|.*韩|.*新|.*美)"
+    filter: "[ENSW\-]*IEPL-(?!.*港|.*台|.*日|.*韩|.*新|.*美)"
     use:
       - ky_nodes
   - name: 💊 海外直连
@@ -502,12 +502,12 @@ proxy-groups:
       - ky_nodes
   - name: 🍰 SS手动选择
     type: select
-    filter: "（SS）IEPL"
+    filter: "（SS）[ENSW\-]*IEPL"
     use:
       - ky_nodes
   - name: 🍰 V2手动选择
     type: select
-    filter: "^IEPL"
+    filter: "^[ENSW\-]*IEPL"
     use:
       - ky_nodes
   - name: ☕ 自动回落
@@ -551,7 +551,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "（SS）IEPL-香港"
+    filter: "（SS）[ENSW\-]*IEPL-香港"
     use:
       - ky_nodes
   - name: 🇭🇰 香港 V2
@@ -559,7 +559,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "^IEPL-香港"
+    filter: "^[ENSW\-]*IEPL-香港"
     use:
       - ky_nodes
   - name: 🇹🇼 台湾 Auto
@@ -574,7 +574,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "（SS）IEPL-台湾"
+    filter: "（SS）[ENSW\-]*IEPL-台湾"
     use:
       - ky_nodes
   - name: 🇹🇼 台湾 V2
@@ -582,7 +582,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "^IEPL-台湾"
+    filter: "^[ENSW\-]*IEPL-台湾"
     use:
       - ky_nodes
   - name: 🇯🇵 日本 Auto
@@ -597,7 +597,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "（SS）IEPL-日本"
+    filter: "（SS）[ENSW\-]*IEPL-日本"
     use:
       - ky_nodes
   - name: 🇯🇵 日本 V2
@@ -605,7 +605,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "^IEPL-日本"
+    filter: "^[ENSW\-]*IEPL-日本"
     use:
       - ky_nodes
   - name: 🇰🇷 韩国 Auto
@@ -619,7 +619,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "^IEPL-韩国"
+    filter: "^[ENSW\-]*IEPL-韩国"
     use:
       - ky_nodes
   - name: 🇸🇬 新加坡 Auto
@@ -634,7 +634,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "（SS）IEPL-新加坡"
+    filter: "（SS）[ENSW\-]*IEPL-新加坡"
     use:
       - ky_nodes
   - name: 🇸🇬 新加坡 V2
@@ -642,7 +642,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "^IEPL-新加坡"
+    filter: "^[ENSW\-]*IEPL-新加坡"
     use:
       - ky_nodes
   - name: 🇺🇸 美国 Auto
@@ -657,7 +657,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "（SS）IEPL-美国"
+    filter: "（SS）[ENSW\-]*IEPL-美国"
     use:
       - ky_nodes
   - name: 🇺🇸 美国 V2
@@ -665,7 +665,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "^IEPL-美国"
+    filter: "^[ENSW\-]*IEPL-美国"
     use:
       - ky_nodes
   - name: 🚀 其他 Auto
@@ -680,7 +680,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "（SS）IEPL-(?!.*港|.*台|.*日|.*韩|.*新|.*美)"
+    filter: "（SS）[ENSW\-]*IEPL-(?!.*港|.*台|.*日|.*韩|.*新|.*美)"
     use:
       - ky_nodes
   - name: 🚀 其他 V2
@@ -688,7 +688,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "^IEPL-(?!.*港|.*台|.*日|.*韩|.*新|.*美)"
+    filter: "^[ENSW\-]*IEPL-(?!.*港|.*台|.*日|.*韩|.*新|.*美)"
     use:
       - ky_nodes
   - name: ⏳ 延迟优先
@@ -696,7 +696,7 @@ proxy-groups:
     url: http://clients.l.google.com/generate_204
     interval: 600
     tolerance: 150
-    filter: "IEPL"
+    filter: "[ENSW\-]*IEPL"
     use:
       - ky_nodes
 rule-providers:
